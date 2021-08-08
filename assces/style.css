@@ -1,4 +1,8 @@
 /* common */
+:root {
+  --cols: 3;
+  --spacing: 15px;
+}
 * {
   padding: 0;
   margin: 0;
@@ -166,10 +170,11 @@ a {
 .member-list {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   padding-top: 47px;
 }
 .member {
-  width: calc(100% / 3);
+  width: calc(100% / var(--cols));
   text-align: center;
 }
 .member-name {
@@ -226,8 +231,6 @@ a {
   margin-right: 16px;
 }
 .tour-cards {
-  --cols: 3;
-  --spacing: 15px;
   margin-top: 30px;
   display: flex;
   margin-left: calc(var(--spacing) * (-1));
@@ -317,7 +320,6 @@ input {
 }
 
 .bnt-send {
-  width: 72px;
   margin-top: 16px;
   padding: 10px 18px;
   text-transform: uppercase;
@@ -363,6 +365,9 @@ button.bnt:hover {
 }
 
 @media screen and (max-width: 600px) {
+  :root {
+    --cols: 1;
+  }
   .header {
     overflow: hidden;
   }
@@ -382,6 +387,10 @@ button.bnt:hover {
     flex-direction: column;
   }
 
+  .bnt-send {
+    margin-left: 0;
+  }
+
   .toggle-header:hover {
     background-color: #cccccc;
     color: black;
@@ -398,8 +407,8 @@ button.bnt:hover {
     display: none;
   }
 
-  .tour-cards {
-    --cols: 1;
+  .member-img {
+    width: 60%;
   }
 
   .contact-content {
@@ -413,10 +422,6 @@ button.bnt:hover {
 
   form {
     width: 100%;
-  }
-
-  .input-name {
-    margin-bottom: 1px;
   }
 
   .input-name,
