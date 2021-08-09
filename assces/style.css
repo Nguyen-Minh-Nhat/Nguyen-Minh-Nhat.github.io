@@ -267,13 +267,15 @@ a {
 	opacity: 0.6;
 }
 .card-tour-desc {
+	flex: 1;
 	line-height: 23px;
 	margin-bottom: 15px;
 }
 
 .bnt-buy-tickets {
+	width: 100px;
 	margin-top: auto;
-	padding: 10px 18px;
+	padding: 10px;
 }
 
 /* contact */
@@ -381,6 +383,7 @@ button.bnt:hover {
 	.dropdown-list a {
 		padding-left: 41px;
 	}
+
 	.nav-left {
 		content: "";
 		position: absolute;
