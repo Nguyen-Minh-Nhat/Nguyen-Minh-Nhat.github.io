@@ -389,6 +389,10 @@ button.bnt:hover {
 		position: absolute;
 		right: 0;
 	}
+
+	.bnt-buy-tickets {
+		margin-right: 0;
+	}
 	.nav-links {
 		flex-direction: column;
 	}
