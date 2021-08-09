@@ -273,9 +273,9 @@ a {
 }
 
 .bnt-buy-tickets {
-	width: 100px;
 	margin-top: auto;
 	padding: 10px;
+	margin-right: auto;
 }
 
 /* contact */
