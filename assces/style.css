@@ -11,6 +11,7 @@
 .wrapper {
 	font-family: "lato", sans-serif;
 	font-size: 15px;
+	background-color: #f7f7f7;
 }
 a {
 	text-decoration: none;
@@ -69,10 +70,9 @@ a {
 	background-color: white;
 	width: 160px;
 	list-style: none;
-	display: flex;
-	flex-direction: column;
+	display: block;
 	position: absolute;
-	box-shadow: 0px 9px 29px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 9px 29px 0px rgba(100, 100, 111, 0.2);
 	display: none;
 	transition: 1s;
 }
@@ -83,11 +83,12 @@ a {
 	color: black;
 	line-height: 38px;
 }
-.nav-item a:hover,
+.nav-item:hover > a,
 .dropdown-list a:hover {
 	background-color: #ccc;
 	color: black;
 }
+
 .dropdown:hover .dropdown-list {
 	display: block;
 }
@@ -382,6 +383,8 @@ button.bnt:hover {
 	}
 	.dropdown-list a {
 		padding-left: 41px;
+		background-color: #333;
+		color: white;
 	}
 
 	.nav-left {
