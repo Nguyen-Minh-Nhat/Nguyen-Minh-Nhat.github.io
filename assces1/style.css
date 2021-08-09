@@ -1,0 +1,441 @@
+/* common */
+:root {
+	--cols: 3;
+	--spacing: 15px;
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.wrapper {
+	font-family: "lato", sans-serif;
+	font-size: 15px;
+}
+a {
+	text-decoration: none;
+}
+
+.bnt {
+	background-color: black;
+	color: white;
+	border: none;
+	font-family: "lato", sans-serif;
+	cursor: pointer;
+	font-size: 15px;
+}
+/* header */
+.header {
+	width: 100vw;
+	max-width: 100%;
+	height: 46px;
+	background-color: black;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 2;
+}
+.nav-header {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.nav-links {
+	height: 100%;
+	display: flex;
+	list-style: none;
+	flex-grow: 1;
+	align-content: space-around;
+}
+
+.nav-item > a {
+	display: block;
+	height: 100%;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 46px;
+	padding: 0 24px;
+}
+.nav-item:first-child a {
+	display: inline-block;
+}
+
+.dropdown {
+	position: relative;
+}
+
+.dropdown-list {
+	background-color: white;
+	width: 160px;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	box-shadow: 0px 9px 29px 0px rgba(0, 0, 0, 0.2);
+	display: none;
+	transition: 1s;
+}
+
+.dropdown-list a {
+	padding: 0 12px;
+	display: block;
+	color: black;
+	line-height: 38px;
+}
+.nav-item a:hover,
+.dropdown-list a:hover {
+	background-color: #ccc;
+	color: black;
+}
+.dropdown:hover .dropdown-list {
+	display: block;
+}
+.search-header,
+.toggle-header {
+	color: #fff;
+	padding: 12px 24px;
+	line-height: 23px;
+	cursor: pointer;
+}
+
+.search-header:hover {
+	background-color: #f44336;
+}
+
+.toggle-header {
+	display: none;
+}
+
+/* container  */
+
+/*sliders*/
+.sliders {
+	margin-top: 46px;
+	height: 50vw;
+	position: relative;
+}
+
+.img-slider {
+	width: 100%;
+	height: 50vw;
+	display: block;
+	object-fit: cover;
+	object-position: center;
+}
+.img-desc {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	text-align: center;
+}
+.location {
+	font-weight: 400;
+	font-size: 24px;
+	padding-bottom: 26px;
+}
+.mess {
+	font-weight: 700;
+}
+
+/*Band*/
+.section {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 85px 15px;
+}
+.title {
+	font-weight: 400;
+	font-size: 30px;
+	margin-bottom: 23px;
+	letter-spacing: 4px;
+	white-space: 20px;
+	text-transform: uppercase;
+	text-align: center;
+}
+.subtitle {
+	display: block;
+	font-style: italic;
+	opacity: 0.6;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.band__about {
+	text-align: justify;
+	font-size: 15px;
+	line-height: 23px;
+}
+.member-list {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	padding-top: 47px;
+}
+.member {
+	width: calc(100% / var(--cols));
+	text-align: center;
+}
+.member-name {
+	display: block;
+	margin: 15px 0;
+	text-align: center;
+}
+.member-img {
+	width: 154px;
+	max-width: 100%;
+	height: 154px;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 4px;
+}
+
+/* Tour */
+#tour-section {
+	background-color: black;
+}
+
+.tour-title,
+.tour-subtitle {
+	color: white;
+}
+
+.month-tickets-list {
+	margin-top: 40px;
+	background-color: white;
+}
+.month-tickets-item {
+	padding: 8px 16px;
+}
+.month-tickets-item:not(:last-child) {
+	border-bottom: 1px solid #ddd;
+}
+.month {
+	opacity: 0.6;
+}
+.status-tickets {
+	background-color: #f44336;
+	color: white;
+	margin-left: 16px;
+	padding: 4px 8px;
+}
+.month-tickets-item:last-child {
+	display: flex;
+	justify-content: space-between;
+}
+.remain {
+	background-color: black;
+	color: white;
+	border-radius: 50%;
+	margin-right: 16px;
+}
+.tour-cards {
+	margin-top: 30px;
+	display: flex;
+	margin-left: calc(var(--spacing) * (-1));
+	flex-wrap: wrap;
+}
+.tour-card {
+	width: calc(calc(100% / var(--cols)) - var(--spacing));
+	margin-left: var(--spacing);
+	margin-bottom: var(--spacing);
+	overflow: hidden;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+.card-content {
+	padding: 20px var(--spacing);
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.card-img {
+	width: 100%;
+	height: 180px;
+	max-height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.tour-place-name {
+	font-weight: 700;
+}
+.tour-date {
+	display: block;
+	margin: 25px 0;
+	opacity: 0.6;
+}
+.card-tour-desc {
+	flex: 1;
+	line-height: 23px;
+	margin-bottom: 15px;
+}
+
+.bnt-buy-tickets {
+	margin-top: auto;
+	padding: 10px;
+	margin-right: auto;
+}
+
+/* contact */
+.contact-content {
+	margin-top: 60px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.addr {
+	max-width: 50%;
+	max-width: 100%;
+}
+
+.addr-item {
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+.icon {
+	display: inline-block;
+	width: 20px;
+}
+.addr-item span {
+	margin-left: 10px;
+}
+form {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+input {
+	padding: 11px 8px;
+	border: 1px solid #d2d2d2;
+}
+.name-and-email {
+	margin-left: -10px;
+}
+.input-name,
+.input-email {
+	width: calc(50% - 12px);
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.input-message {
+	width: 100%;
+}
+
+.bnt-send {
+	margin-top: 16px;
+	padding: 10px 18px;
+	text-transform: uppercase;
+	margin-left: auto;
+}
+span {
+	display: inline-block;
+}
+button.bnt:hover {
+	background-color: #cccccc;
+	color: black;
+}
+
+/* footer */
+.footer {
+	text-align: center;
+}
+
+.footer-bottom {
+	padding: 64px 16px;
+}
+.icon-list {
+	font-size: 24px;
+}
+
+.copyright {
+	margin: 15px 0;
+	line-height: 1.5;
+}
+
+.copyright,
+.footer-icon,
+.copyright > a {
+	color: #7c7c7c;
+}
+
+.copyright > a {
+	text-decoration: underline;
+}
+
+.footer-icon:hover {
+	opacity: 0.6;
+}
+
+@media screen and (max-width: 600px) {
+	:root {
+		--cols: 1;
+	}
+	.header {
+		overflow: hidden;
+	}
+	.dropdown-list {
+		width: 100%;
+		position: initial;
+	}
+	.dropdown-list a {
+		padding-left: 41px;
+	}
+
+	.nav-left {
+		content: "";
+		position: absolute;
+		right: 0;
+	}
+
+	.bnt-buy-tickets {
+		margin-right: 0;
+	}
+	.nav-links {
+		flex-direction: column;
+	}
+
+	.bnt-send {
+		margin-left: 0;
+	}
+
+	.toggle-header:hover {
+		background-color: #cccccc;
+		color: black;
+	}
+
+	.search-header {
+		display: none;
+	}
+	.toggle-header {
+		display: inline-block;
+	}
+
+	.img-desc {
+		display: none;
+	}
+
+	.member-img {
+		width: 60%;
+	}
+
+	.contact-content {
+		flex-direction: column;
+	}
+
+	.name-and-email {
+		display: flex;
+		flex-direction: column;
+	}
+
+	form {
+		width: 100%;
+	}
+
+	.input-name,
+	.input-email {
+		width: calc(100% - 10px);
+	}
+}
