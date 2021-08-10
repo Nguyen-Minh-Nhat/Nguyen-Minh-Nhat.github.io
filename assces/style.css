@@ -145,6 +145,7 @@ button.btn:hover {
 	transform: translateX(-50%);
 	color: white;
 	text-align: center;
+	text-shadow: 2px 2px 3px #000;
 }
 
 .location {
@@ -350,6 +351,14 @@ input {
 }
 span {
 	display: inline-block;
+}
+
+.addr-item a {
+	opacity: 0.7;
+}
+
+.addr-item a:hover {
+	opacity: 1;
 }
 
 /* footer */
