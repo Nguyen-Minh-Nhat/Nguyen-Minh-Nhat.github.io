@@ -91,27 +91,31 @@
           <ul class="member-list">
             <li class="member">
               <span class="member-name">John</span>
-              <img
-                src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"
-                alt="John"
-                class="member-img"
-              />
+              <div class="member-img">
+                <img
+                  src="https://www.w3schools.com/w3images/bandmember.jpg"
+                  alt="John"
+                />
+              </div>
             </li>
             <li class="member">
               <span class="member-name">Jackson</span>
-              <img
-                src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                alt="Jackson"
-                class="member-img"
-              />
+              <div  class="member-img">
+                <img
+                  src="https://www.w3schools.com/w3images/bandmember.jpg"
+                  alt="Jackson"
+                  
+                />
+              </div>
             </li>
             <li class="member">
               <span class="member-name">Jessica</span>
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"
-                alt="Jessica"
-                class="member-img"
-              />
+              <div  class="member-img">
+                <img
+                  src="https://www.w3schools.com/w3images/bandmember.jpg"
+                  alt="Jessica"
+                />
+              </div>
             </li>
           </ul>
         </section>
@@ -151,7 +155,7 @@
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                     .
                   </p>
-                  <button type="button" class="bnt bnt-buy-tickets">
+                  <button type="button" class="btn btn-buy-tickets">
                     Buy Tickets
                   </button>
                 </div>
@@ -168,7 +172,7 @@
                   <p class="card-tour-desc">
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                   </p>
-                  <button type="button" class="bnt bnt-buy-tickets">
+                  <button type="button" class="btn btn-buy-tickets">
                     Buy Tickets
                   </button>
                 </div>
@@ -186,7 +190,7 @@
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                   </p>
-                  <button type="button" class="bnt bnt-buy-tickets">
+                  <button type="button" class="btn btn-buy-tickets">
                     Buy Tickets
                   </button>
                 </div>
@@ -234,7 +238,7 @@
                 placeholder="Message"
                 class="input-message"
               />
-              <button type="submit" class="bnt bnt-send">Send</button>
+              <button type="submit" class="btn btn-send">Send</button>
             </form>
           </div>
         </section>
@@ -290,7 +294,7 @@
     <div class="modal">
       <div class="modal-container">
         <div class="modal-top">
-          <div class="modal-close-bnt"><i class="fas fa-times"></i></div>
+          <div class="modal-close-btn"><i class="fas fa-times"></i></div>
           <h2 class="modal-title"><i class="fas fa-suitcase"></i>Tickets</h2>
         </div>
 
@@ -299,13 +303,14 @@
           <input id="how-many"type="text" required placeholder="How many?">
           <label for="enter-email" class="Send-to"><i class="fas fa-user-alt"></i>Send To</label>
           <input id="enter-email" required type="email" placeholder="Enter email">
-          <button type="submit"class="bnt-pay">Pay<i class="fas fa-check"></i></button>
+          <button type="submit" class="btn btn-pay">Pay<i class="fas fa-check"></i></button>
           <div class="modal-help">Need <a href="">help?</a></div>
         </form>
       </div>
     </div>
 
     <script>
+      //responsive nav
       var header = document.getElementById("js-header");
       var toggle = document.getElementById("js-toggle");
       var headerHeight = header.clientHeight;
@@ -332,6 +337,36 @@
           }
         };
       }
+
+      //buy-tickets
+      var buyBtns = document.querySelectorAll('.btn-buy-tickets')
+
+      var modal = document.querySelector('.modal')
+
+      var closeBtn = document.querySelector('.modal-close-btn')
+
+      var modalContainer = document.querySelector('.modal-container')
+
+      function showModal() {
+        modal.classList.add('modal-open')
+      }
+
+      function hideModal() {
+        modal.classList.remove('modal-open')
+      }
+
+      for(var buyBtn of buyBtns) {
+        buyBtn.addEventListener('click', showModal)
+      }
+
+      closeBtn.addEventListener('click', hideModal)
+
+      modal.addEventListener('click', hideModal)
+
+      modalContainer.addEventListener('click', function (event) {
+        event.stopPropagation();
+      })
+
     </script>
   </body>
 </html>

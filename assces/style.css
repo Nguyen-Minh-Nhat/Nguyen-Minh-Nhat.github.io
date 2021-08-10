@@ -3,21 +3,24 @@
 	--cols: 3;
 	--spacing: 15px;
 }
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
+
 .wrapper {
 	background-color: #f7f7f7;
 	font-family: "lato", sans-serif;
 	font-size: 15px;
 }
+
 a {
 	text-decoration: none;
 }
 
-.bnt {
+.btn {
 	background-color: black;
 	color: white;
 	border: none;
@@ -25,6 +28,12 @@ a {
 	cursor: pointer;
 	font-size: 15px;
 }
+
+button.btn:hover {
+	background-color: #cccccc;
+	color: black;
+}
+
 /* header */
 .header {
 	width: 100vw;
@@ -37,11 +46,13 @@ a {
 	left: 0;
 	z-index: 2;
 }
+
 .nav-header {
 	height: 100%;
 	display: flex;
 	justify-content: space-between;
 }
+
 .nav-links {
 	height: 100%;
 	display: flex;
@@ -58,6 +69,7 @@ a {
 	line-height: 46px;
 	padding: 0 24px;
 }
+
 .nav-item:first-child a {
 	display: inline-block;
 }
@@ -83,6 +95,7 @@ a {
 	color: black;
 	line-height: 38px;
 }
+
 .nav-item:hover > a,
 .dropdown-list a:hover {
 	background-color: #ccc;
@@ -92,6 +105,7 @@ a {
 .dropdown:hover .dropdown-list {
 	display: block;
 }
+
 .search-header,
 .toggle-header {
 	color: #fff;
@@ -109,7 +123,6 @@ a {
 }
 
 /* container  */
-
 /*sliders*/
 .sliders {
 	margin-top: 46px;
@@ -124,6 +137,7 @@ a {
 	object-fit: cover;
 	object-position: center;
 }
+
 .img-desc {
 	position: absolute;
 	bottom: 50px;
@@ -132,11 +146,13 @@ a {
 	color: white;
 	text-align: center;
 }
+
 .location {
 	font-weight: 400;
 	font-size: 24px;
 	padding-bottom: 26px;
 }
+
 .mess {
 	font-weight: 700;
 }
@@ -147,6 +163,7 @@ a {
 	margin: 0 auto;
 	padding: 85px 15px;
 }
+
 .title {
 	font-weight: 400;
 	font-size: 30px;
@@ -156,6 +173,7 @@ a {
 	text-transform: uppercase;
 	text-align: center;
 }
+
 .subtitle {
 	display: block;
 	font-style: italic;
@@ -163,32 +181,31 @@ a {
 	text-align: center;
 	margin-bottom: 20px;
 }
+
 .band__about {
 	text-align: justify;
 	font-size: 15px;
 	line-height: 23px;
 }
+
 .member-list {
 	display: flex;
-	justify-content: space-evenly;
 	flex-wrap: wrap;
 	padding-top: 47px;
 }
+
 .member {
 	width: calc(100% / var(--cols));
 	text-align: center;
+	margin-bottom: 16px;
 }
-.member-name {
-	display: block;
+
+.member .member-name {
 	margin: 15px 0;
-	text-align: center;
 }
-.member-img {
-	width: 154px;
-	max-width: 100%;
-	height: 154px;
-	object-fit: cover;
-	object-position: center;
+
+.member-img img {
+	width: 60%;
 	border-radius: 4px;
 }
 
@@ -273,7 +290,7 @@ a {
 	margin-bottom: 15px;
 }
 
-.bnt-buy-tickets {
+.btn-buy-tickets {
 	margin-top: auto;
 	padding: 10px;
 	margin-right: auto;
@@ -325,7 +342,7 @@ input {
 	width: 100%;
 }
 
-.bnt-send {
+.btn-send {
 	margin-top: 16px;
 	padding: 10px 18px;
 	text-transform: uppercase;
@@ -333,10 +350,6 @@ input {
 }
 span {
 	display: inline-block;
-}
-button.bnt:hover {
-	background-color: #cccccc;
-	color: black;
 }
 
 /* footer */
@@ -383,6 +396,10 @@ button.bnt:hover {
 	justify-content: center;
 	align-items: center;
 	padding: 10% 5%;
+	display: none;
+}
+.modal-open {
+	display: flex;
 }
 .modal .modal-container {
 	width: 100%;
@@ -390,6 +407,7 @@ button.bnt:hover {
 	max-width: 900px;
 	max-height: 474px;
 	background-color: white;
+	animation: downModal 0.5s ease;
 }
 
 .modal-container,
@@ -412,24 +430,28 @@ button.bnt:hover {
 	font-size: 36px;
 }
 
-.modal-top .modal-close-bnt {
+.modal-top .modal-close-btn {
 	position: absolute;
 	right: 0;
 	top: 0;
 	padding: 12px 18px;
 	cursor: pointer;
-	color: #ccc;
+	color: white;
 }
 
-.modal-top .modal-close-bnt:hover {
+.modal-top .modal-close-btn:hover {
 	background-color: #f44336;
 	color: black;
+}
+
+.modal-top .modal-title i {
+	margin-right: 16px;
 }
 
 .modal-bottom {
 	padding: 0px 16px;
 }
-.modal-bottom .bnt-pay,
+.modal-bottom .btn-pay,
 .modal-bottom label {
 	margin: 16px 0;
 }
@@ -437,7 +459,7 @@ button.bnt:hover {
 	margin-bottom: 12px;
 }
 
-.modal-bottom .bnt-pay {
+.modal-bottom .btn-pay {
 	border: none;
 	background-color: teal;
 	padding: 16px;
@@ -449,9 +471,8 @@ button.bnt:hover {
 	border-radius: 4px;
 }
 
-.modal-bottom .bnt-pay:hover {
-	background-color: #ccc;
-	color: black;
+.modal-bottom .btn-pay i {
+	margin-left: 4px;
 }
 
 .modal-bottom .modal-help {
@@ -461,6 +482,18 @@ button.bnt:hover {
 .modal-bottom .modal-help a {
 	text-decoration: underline;
 	color: #4fabf5;
+}
+
+@keyframes downModal {
+	from {
+		transform: translateY(-150px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -486,14 +519,14 @@ button.bnt:hover {
 		right: 0;
 	}
 
-	.bnt-buy-tickets {
+	.btn-buy-tickets {
 		margin-right: 0;
 	}
 	.nav-links {
 		flex-direction: column;
 	}
 
-	.bnt-send {
+	.btn-send {
 		margin-left: 0;
 	}
 
@@ -513,10 +546,6 @@ button.bnt:hover {
 		display: none;
 	}
 
-	.member-img {
-		width: 60%;
-	}
-
 	.contact-content {
 		flex-direction: column;
 	}
@@ -526,7 +555,7 @@ button.bnt:hover {
 		flex-direction: column;
 	}
 
-	form {
+	#contact-section form {
 		width: 100%;
 	}
 
