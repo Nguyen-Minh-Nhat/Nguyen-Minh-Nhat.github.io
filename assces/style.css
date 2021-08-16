@@ -606,11 +606,6 @@ span {
 		margin-left: 0;
 	}
 
-	.toggle-header:hover {
-		background-color: #cccccc;
-		color: black;
-	}
-
 	.search-header {
 		display: none;
 	}
@@ -639,4 +634,65 @@ span {
 	.input-email {
 		width: calc(100% - 10px);
 	}
+}
+/* update toggle */
+.toggle-header {
+	height: 48px;
+	width: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-line {
+	content: "";
+
+	position: absolute;
+
+	width: 15px;
+	height: 2.4px;
+	border-radius: 1px;
+	background-color: white;
+}
+
+.toggle-header::after {
+	content: "";
+
+	position: absolute;
+
+	width: 15px;
+	height: 2.4px;
+	border-radius: 1px;
+	background-color: white;
+	transform: translateY(5px);
+	transition: 0.25s ease-in;
+}
+
+.toggle-header::before {
+	content: "";
+
+	position: absolute;
+
+	width: 15px;
+	height: 2.4px;
+	border-radius: 1px;
+	background-color: white;
+	transform: translateY(-5px);
+	transition: 0.25s ease-in;
+}
+
+.toggle-header.open-toggle::after {
+	transform: rotate(-45deg);
+}
+.toggle-header.open-toggle::before {
+	transform: rotate(45deg);
+}
+
+.toggle-header i {
+	transform-origin: 50% 50%;
+	transition: 0.25s ease-in;
+}
+
+.open-toggle i {
+	width: 0;
 }
