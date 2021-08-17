@@ -610,7 +610,7 @@ span {
 		display: none;
 	}
 	.toggle-header {
-		display: inline-block;
+		display: flex;
 	}
 
 	.img-desc {
@@ -639,7 +639,7 @@ span {
 .toggle-header {
 	height: 48px;
 	width: 48px;
-	display: flex;
+	/* display: flex; */
 	justify-content: center;
 	align-items: center;
 }
